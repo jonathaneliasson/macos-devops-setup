@@ -1,0 +1,5 @@
+atom_packages:
+  - minimap
+  - linter
+  - atom-beautify
+  - file-icons

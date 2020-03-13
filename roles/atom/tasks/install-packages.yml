@@ -1,0 +1,11 @@
+---
+- name: install packages
+  shell: |
+    set -euo pipefail
+    apm list --bare | grep '{{ item }}' &&
+    echo 'Already installed.' ||
+    apm install '{{ item }}'
+  args:
+    executable: /bin/bash
+  loop: "{{ atom_packages }}"
+  register: apm_result

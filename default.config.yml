@@ -1,0 +1,18 @@
+---
+configure_osx: no
+configure_dotfiles: no
+configure_homebrew: yes
+configure_atom: no
+configure_mas: no
+configure_shell: yes
+
+mas_installed_app_ids:
+  - 1295203466 # Microsoft Remote Desktop
+  - 784801555 # Microsoft OneNote (16.34)
+  - 823766827 # OneDrive (19.222.1110)
+  - 462058435 # Microsoft Excel (16.34)
+  - 985367838 # Microsoft Outlook (16.34)
+  - 462054704 # Microsoft Word (16.34)
+  - 865500966 # feedly (1.1)
+  - 462062816 # Microsoft PowerPoint (16.34)
+  - 1439900554 # Aruba VIA (3.1.6)

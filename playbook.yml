@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  roles:
+    - role: dotfiles
+      when: configure_dotfiles
+    - role: homebrew
+      when: configure_homebrew
+    - role: atom
+      when: configure_atom
+    - role: mas
+      when: configure_mas
+    - role: shell
+      when: configure_shell

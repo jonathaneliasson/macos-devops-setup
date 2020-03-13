@@ -1,0 +1,12 @@
+---
+dotfiles_repo: "https://github.com/jonathaneliasson/macos-dot-files.git"
+dotfiles_repo_accept_hostkey: no
+dotfiles_destination: "~/"
+
+dotfiles:
+  - .aliases
+  - .gitconfig
+  - .gitignore_global
+  - .osx
+  - .vimrc
+  - .zshrc

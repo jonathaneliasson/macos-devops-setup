@@ -1,0 +1,12 @@
+---
+
+- name: Ensure Atom is installed.
+  homebrew: 
+    name: atom
+    state: present
+
+# Install Atom Packages
+- import_tasks: install-packages.yml
+
+# Update Atom config file
+- import_tasks: write-config.yml

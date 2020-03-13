@@ -1,0 +1,7 @@
+- name: Ensure hyper is installed.
+  homebrew: 
+    name: hyper
+    state: present
+
+- name: :wq
+

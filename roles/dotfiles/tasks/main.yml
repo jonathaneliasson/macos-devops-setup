@@ -1,0 +1,23 @@
+---
+- name: Create random tmp dir for files based on time stamp
+  file: 
+    path: "~/tmp-{{ ansible_date_time.epoch }}"
+    state: directory
+
+- name: Ensure dotfiles repository is cloned to tmp dir
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "~/tmp-{{ ansible_date_time.epoch }}"
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+
+- name: Copy dotfiles to home dir
+  copy:
+    src: "~/tmp-{{ ansible_date_time.epoch }}/{{ item }}"
+    dest: "{{ dotfiles_destination }}"
+  loop: "{{ dotfiles }}"
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Remove temporary dotfiles
+  file:
+    path: "~/tmp-{{ ansible_date_time.epoch }}"
+    state: absent
